@@ -1,9 +1,17 @@
 $(document).ready(function () {
 
   $('#sidebarCollapse').on('click', function () {
-      $('#sidebar').toggleClass('active');
-      $('#content').toggleClass('active');
-      $('.overlay').toggleClass('active');
+    if ($('#sidebar').hasClass('active')) {
+      $('#sidebar').removeClass('active');
+      $('#content').removeClass('active');
+      $('.overlay').removeClass('active');
+    } 
+    else {
+      $('#sidebar').addClass('active');
+      $('#content').addClass('active');
+      $('.overlay').addClass('active');
+    }
+
   });
 
   $('.overlay').on('click', function () {
