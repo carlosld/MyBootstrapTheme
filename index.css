@@ -27,12 +27,19 @@ a:focus {
 ----------------------------------------------------- */
 
 .wrapper {
+  overflow: hidden;
   display: flex;
   width: 100%;
   align-items: stretch;
 }
 
 #sidebar {
+
+  height: 100vh;
+  position: fixed;
+  left: 0;
+
+
   min-width: 220px;
   max-width: 220px;
   background: #7386d5;
@@ -124,7 +131,12 @@ a.article:hover {
   width: 100%;
   padding: 20px;
   min-height: 100vh;
-  transition: all 0.3s;
+  transition: all 0.3s;  
+  margin-left: 220px;
+}
+
+#content.active {
+  margin-left: 0;
 }
 
 .overlay {
@@ -147,11 +159,31 @@ a.article:hover {
     MEDIAQUERIES
 ----------------------------------------------------- */
 
+/* display .overlay when it has the .active class */
+@media (max-width: 768px) {
+  #sidebar {
+    margin-left: -220px;
+  }
+
+  #sidebar.active {
+    margin-left: 0;
+  }
+
+  #content {
+    margin-left: 0;
+  }
+
+  #content.active {
+    margin-left: 220px;
+  }
+
+  #sidebarCollapse span {
+    display: none;
+  }
+}
+
 @media (max-width: 576px) {
   #sidebar {
-    height: 100vh;
-    position: fixed;
-    left: 0;
     /* top layer */
     z-index: 9999;
   }
@@ -160,17 +192,8 @@ a.article:hover {
     display: block;
     opacity: 1;
   }
-}
-
-/* display .overlay when it has the .active class */
-@media (max-width: 768px) {
-  #sidebar {
-    margin-left: -220px;
-  }
-  #sidebar.active {
+  
+  #content.active {
     margin-left: 0;
-  }
-  #sidebarCollapse span {
-    display: none;
-  }
+  }  
 }
