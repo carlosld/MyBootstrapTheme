@@ -33,29 +33,19 @@ a:focus {
   margin-left: -220px;
 }
 
-#sidebar ul.components {
-  padding: 20px 0;  
-}
-
 #sidebar ul p {
   color: #fff;
-  padding: 10px;
+  padding: 5px;
 }
 
 #sidebar ul li a {
-  padding: 10px;
+  padding: 5px;
   display: block;
 }
 
 #sidebar ul li a:hover {
   color: #2f353a;
   background: #fff;
-}
-
-#sidebar ul li.active > a,
-a[aria-expanded="true"] {
-  color: #fff;
-  background: red;
 }
 
 a[data-toggle="collapse"] {
